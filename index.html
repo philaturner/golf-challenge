@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turner Invitational | Skills</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<script>
+    function generate() {
+        console.log("Starting generation");
+        const points = [5, 10];
+        const randomIndex = Math.floor(Math.random() * 2);
+        document.getElementById('ldPoints').innerText = points[randomIndex];
+        points.splice(randomIndex, 1);
+        document.getElementById('npPoints').innerText = points[0];
+        const longDriveHoles = [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 13, 14, 15, 17, 18];
+        let randomDriveIndex = Math.floor(Math.random() * (longDriveHoles.length - 1));
+        document.getElementById('ldHole1').innerText = longDriveHoles[randomDriveIndex];
+        longDriveHoles.splice(randomDriveIndex, 1);
+        randomDriveIndex = Math.floor(Math.random() * (longDriveHoles.length - 1));
+        document.getElementById('ldHole2').innerText = longDriveHoles[randomDriveIndex];
+    }
+</script>
+
+<div class="p-8 flex flex-col text-center">
+    <div class="mb-4">
+        <h1 class="text-3xl font-bold text-purple-700">
+            Turner Challenge
+        </h1>
+    </div>
+    <div class="mb-3 text-lg">
+        <h3 class="font-bold">Points Value</h3>
+        <p>Long Driver: <span id="ldPoints">TBC</span></p>
+        <p>Nearest Pin: <span id="npPoints">TBC</span></p>
+    </div>
+    <div class="mb-3 text-lg">
+        <h3 class="font-bold">Longest Drive Holes</h3>
+        <p>Hole <span id="ldHole1">XX</span></p>
+        <p>Hole <span id="ldHole2">YY</span></p>
+    </div>
+    <div class="mb-5 text-lg">
+        <h3 class="font-bold">Nearest Pin</h3>
+        <p>Hole 6</p>
+        <p>Hole 12</p>
+        <p>Hole 16</p>
+    </div>
+    <div>
+        <button onclick="generate()" class="px-6 py-2 text-white bg-purple-600 hover:bg-purple-500 rounded-xl">
+            Generate
+        </button>
+    </div>
+</div>
+</body>
+</html>
